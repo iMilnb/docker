@@ -2,7 +2,7 @@
 
 As I didn't find a proper _Dockerfile_ for versions 7+ of [Dolibarr][1] I took
 this excuse to improve my [docker][2] skills.
-The image is build using [dolideb][3] and its dependencies.
+The image is built using [dolideb][3] and its dependencies.
 
 The environment variables you might want to modify are:
 
