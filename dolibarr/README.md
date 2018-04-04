@@ -4,9 +4,9 @@ As I didn't find a proper _Dockerfile_ for versions 7+ of [Dolibarr][1] I took
 this excuse to improve my [docker][2] skills.
 The image is build using [dolideb][3] and its dependencies.
 
-The configurable environment variables you might want to modify are:
+The environment variables you might want to modify are:
 
-`` 
+```
 ENV DOLI_URL_ROOT http://localhost/dolibarr
 ENV DOLI_DB_HOST localhost
 ENV DOLI_DB_NAME dolibarrdebian
