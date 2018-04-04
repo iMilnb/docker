@@ -5,7 +5,9 @@ set -o pipefail
 DOCROOT="/usr/share/dolibarr/htdocs"
 DOLICONF="/etc/dolibarr/conf.php"
 
-cat >${DOLICONF}<<EOF
+# if it's not a fresh installation, prepare dolibarr configuration
+if [ -z "${FRESH_INSTALL}" ]; then
+	cat >${DOLICONF}<<EOF
 <?php
 \$dolibarr_main_url_root='${DOLI_URL_ROOT}';
 \$dolibarr_main_document_root='${DOCROOT}';
@@ -23,8 +25,10 @@ cat >${DOLICONF}<<EOF
 \$dolibarr_main_db_collation='utf8_unicode_ci';
 EOF
 
-chown ${APACHE_RUN_USER}:${APACHE_RUN_GROUP} ${DOLICONF}
-chmod 400 ${DOLICONF}
+	chown ${APACHE_RUN_USER}:${APACHE_RUN_GROUP} ${DOLICONF}
+	chmod 400 ${DOLICONF}
+
+fi
 
 cat >/etc/php/7.0/apache2/php.ini<<EOF
 log_errors = On

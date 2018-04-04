@@ -7,12 +7,18 @@ The image is built using [dolideb][3] and its dependencies.
 The environment variables you might want to modify are:
 
 ```
-ENV DOLI_URL_ROOT http://localhost/dolibarr
-ENV DOLI_DB_HOST localhost
-ENV DOLI_DB_NAME dolibarrdebian
-ENV DOLI_DB_USER dolibarrdebian
-ENV DOLI_DB_PASSWORD the_passwd
-ENV APACHE_LISTEN_PORT 80
+# those are pretty obvious
+
+DOLI_URL_ROOT=http://localhost/dolibarr
+DOLI_DB_HOST=localhost
+DOLI_DB_NAME=dolibarrdebian
+DOLI_DB_USER=dolibarrdebian
+DOLI_DB_PASSWORD=the_passwd
+APACHE_LISTEN_PORT=80
+
+# if this is a new Dolibarr installation, i.e. no database exists yet, set this
+
+FRESH_INSTALL=yes
 ```
 
 * Build
