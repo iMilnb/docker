@@ -29,7 +29,7 @@ ENV APACHE_LOCK_DIR    /var/lock/apache2
 ENV APACHE_LOG_DIR     /var/log/apache2
 ENV LANG               C
 
-EXPOSE 80
+EXPOSE ${APACHE_LISTEN_PORT}
 
 COPY start.sh /bin/
 
