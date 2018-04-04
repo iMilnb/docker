@@ -17,11 +17,11 @@ ENV APACHE_LISTEN_PORT 80
 
 * Build
 
-`docker build --rm --force-rm -t foo/dolibarr .`
+`$ docker build --rm --force-rm -t foo/dolibarr .`
 
 * Example run
 
-`docker run --net="host" --rm -e "DOLI_DB_PASSWORD=myawesomepassword" -e "DOLI_DB_HOST=127.0.0.1" -e "APACHE_LISTEN_PORT=8080" foo/dolibarr`
+`$ docker run --net="host" --rm -e "DOLI_DB_PASSWORD=myawesomepassword" -e "DOLI_DB_HOST=127.0.0.1" -e "APACHE_LISTEN_PORT=8080" foo/dolibarr`
 
 
 [1]: https://www.dolibarr.org/
