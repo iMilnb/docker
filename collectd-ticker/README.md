@@ -1,4 +1,4 @@
-This is the `Dockerfile` for the [collectd-ticker][1] [collectd][2] plugin.
+This is the `Dockerfile` for the [collectd-ticker][1] plugin enabled [collectd][2].
 
 You might want to map your own `collectd.conf` file and probably a `ticker.json` file matching your needs.  
 Read the [project][1]'s main page in order to create the latter.
