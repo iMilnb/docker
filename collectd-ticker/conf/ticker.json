@@ -1,0 +1,28 @@
+{
+  "bitstamp":
+    {
+      "url": "https://www.bitstamp.net/api/v2/ticker/",
+      "pairs": ["ethusd", "xrpusd", "btcusd"],
+      "pricekey": "last"
+    },
+  "bittrex":
+    {
+      "url": "https://bittrex.com/api/v1.1/public/getticker?market=",
+      "pairs": ["BTC-XEM", "BTC-XVG", "BTC-XLM", "BTC-SC"],
+      "convert": "USDT-BTC",
+      "pricekey": "Last"
+    },
+  "binance":
+    {
+      "url": "https://api.binance.com/api/v1/ticker/price?symbol=",
+      "pairs": ["REQBTC", "LINKBTC", "FUNBTC"],
+      "convert": "BTCUSDT",
+      "pricekey": "price"
+  },
+  "coinmarketcap":
+    {
+      "url": "https://api.coinmarketcap.com/v1/ticker/",
+      "pairs": ["kin"],
+      "pricekey": "price_usd"
+    }
+}
