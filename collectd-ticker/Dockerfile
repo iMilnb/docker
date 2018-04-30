@@ -1,3 +1,4 @@
+# backports needed for golang 1.9+
 FROM debian:stretch-backports
 
 LABEL maintainer="Emile `iMil' Heitor <imil@home.imil.net>"
@@ -19,7 +20,9 @@ RUN go get collectd.org/api && \
 
 WORKDIR /
 
-RUN rm -rf ${GOPATH} && apt-get -y purge collectd-dev git golang make
+RUN rm -rf ${GOPATH} && \
+    apt-get -y purge collectd-dev git golang make && \
+    apt-get -y autoremove
 
 COPY conf/* /etc/collectd/
 
