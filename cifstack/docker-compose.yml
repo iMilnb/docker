@@ -1,0 +1,34 @@
+version: '3'
+
+services:
+  collectd:
+    image: imil/collectd-ticker
+    links:
+      - influxdb
+    volumes:
+      - ./collectd.conf:/etc/collectd/collectd.conf
+      - ./ticker.json:/etc/collectd/ticker.json
+
+  influxdb:
+    image: influxdb
+    ports:
+      - "8086:8086"
+      - "8088:8088"
+      - "25826:25826"
+    volumes:
+      - influxdb:/var/lib/influxdb
+      - ./influxdb.conf:/etc/influxdb/influxdb.conf
+      - ./types.db:/usr/share/collectd/types.db:ro
+
+  grafana:
+    image: grafana/grafana
+    ports:
+      - "3000:3000"
+    volumes:
+      - grafana:/var/lib/grafana
+    links:
+      - influxdb
+
+volumes:
+  influxdb:
+  grafana:
