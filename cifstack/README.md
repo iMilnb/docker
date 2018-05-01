@@ -6,6 +6,8 @@ Of course, it can be used for pretty much everything _CIF_ (_Collectd, InfluxDB,
 
 ### Usage
 
+The one configuration you definitely want to modify is `ticker.json`, where the currencies you want to follow are listed, along with the _URL_ from where to get the values from. Please refer to [collectd-ticker][1] repository in order to correctly fill this file.
+
 You might want to modify the storage method (`volumes`) in the `docker-compose.yml` file, for example, to _mount bind_ `influxdb` or `grafana` volumes:
 
 ```
